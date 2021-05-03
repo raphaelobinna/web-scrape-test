@@ -87,6 +87,7 @@ app.post('/you', async (req, res) => {
     return links;
     });
     console.log(urls);
+    res.status(200).json({status: 200, websites: urls})
 })
 
 //   const datu = await page.evaluate(() => {
@@ -98,8 +99,32 @@ app.post('/you', async (req, res) => {
 //    await browser.close();
 // })
 
+app.post('/us', async (req, res) => {
+    const b = 'https://www.google.com/searchbyimage?&image_url=https://assets.burberry.com/is/image/Burberryltd/59083e8f56fac88fa3284ad03a4e557a89980dc7.jpg?$BBY_V2_SL_1x1$&wid=2500&hei=2500'
+
+
+    console.log('u hit')
+    const browser = await puppeteer.launch({ headless: false });
+  const page = await browser.newPage();
+  //await page.emulateNetworkConditions(slow3G);
+  await page.goto(b);
+  console.log('went')
+
+  await page.waitForSelector('.card-section');
+  console.log('i know')
+
+  let urls = await page.$$eval('.r5a77d', links => {
+   console.log('lets go')
+    // Extract the links from the data
+    links = links.map(el => el.querySelector('a.fKDtNb').innerText)
+    return links;
+    });
+    console.log(urls);
+    res.status(200).json({status: 200, image_name: urls})
+})
+
 //set port
-const PORT = 3000;
+const PORT = 5000;
 
 //start server
 const server  = app.listen(PORT, () => console.log('test server has started'));
