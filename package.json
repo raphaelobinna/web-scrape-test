@@ -15,8 +15,11 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "nodemon": "^2.0.7",
-    "puppeteer": "^9.0.0",
+    "puppeteer": "^9.1.0",
     "puppeteer-core": "^9.0.0",
+    "puppeteer-extra": "^3.1.18",
+    "puppeteer-extra-plugin-adblocker": "^2.11.11",
+    "puppeteer-extra-plugin-stealth": "^2.7.8",
     "request": "^2.88.2",
     "xpath-html": "^1.0.2"
   }
