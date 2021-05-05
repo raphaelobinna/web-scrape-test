@@ -237,14 +237,14 @@ console.log('1')
   await page.waitForSelector('input[type="email"]');
   console.log('2')
   await page.click('input[type="email"]')
-  await page.type('input[type="email"]', 'raphaelogbonnaya@gmail.com');
+  await page.type('input[type="email"]', 'email');
   
   await page.waitForSelector('#identifierNext')
   console.log('3')
   await page.click('#identifierNext')
 
   await page.waitForSelector('input[type="password"]', { visible: true });
-  await page.type('input[type="password"]', 'Iheanyichukwu0');
+  await page.type('input[type="password"]', 'password');
 
   await page.waitForSelector("#passwordNext", { visible: true });
   await page.click("#passwordNext");
